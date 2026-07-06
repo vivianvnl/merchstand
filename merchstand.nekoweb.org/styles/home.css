@@ -36,7 +36,7 @@ font-style: normal;
 	color:skyblue;
 }
 body {
-  background: blue url('/images/bgs/webp/bluequilt.webp');
+  background: blue url('../images/bgs/webp/bluequilt.webp');
   background-size: 25%;
   font-style: italic;
   text-decoration: none;
@@ -71,7 +71,7 @@ body {
 
   }
   .mainpage {
-    background: midnightblue url('/images/bgs/webp/065C.webp/');
+    background: midnightblue url('../images/bgs/webp/065C.webp/');
     background-size: 50%;
     border: 0.25em ridge blue;
     width: 75%;
@@ -114,7 +114,7 @@ body {
     transform: translateX(-0.4em) translateY(-0.8em);
   }
   nav {
-    background: steelblue url('/images/bgs/gif/blueflower.gif/');
+    background: steelblue url('../images/bgs/gif/blueflower.gif/');
     border-style: outset;
     border-radius: 1em;
     border-width: 0.1em;
@@ -171,7 +171,7 @@ body {
     text-align: left;
   }
   .dropdown:hover .dropdown-content {
-    background: steelblue url('/images/bgs/gif/blueflower.gif/');
+    background: steelblue url('../images/bgs/gif/blueflower.gif/');
     border-style: outset;
     border-radius: 1em 1em;
     border-width: 0.1em;
@@ -207,7 +207,7 @@ body {
   }
 
   .mainintrobg {
-    background: midnightblue url('/images/bgs/gif/018.GIF');
+    background: midnightblue url('../images/bgs/gif/018.GIF');
     border: 0.25em ridge cadetblue;
     border-radius: 22px;
     padding: 1.25em;
@@ -304,7 +304,7 @@ body {
   }
   /* Style the buttons inside the tab */
   .tab button {
-    background: saddlebrown url('/images/bgs/webp/034C.webp/');
+    background: saddlebrown url('../images/bgs/webp/034C.webp/');
     border: 0.125em ridge goldenrod;
     border-left: none;
     border-radius: 0 0.75em 0.75em 0;
@@ -323,13 +323,13 @@ body {
   }
   /* Change background color of buttons on hover */
   .tab button:hover,   .tab button:active {
-    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background: saddlebrown url('../images/bgs/webp/cutestars.webp/');
     background-size: 50%;
     color: #fff5a5
   }
   /* Create an active/current "tab button" class */
   .tab button.active {
-    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background: saddlebrown url('../images/bgs/webp/cutestars.webp/');
     background-size: 50%;
     color: #fff5a5
   }
@@ -352,12 +352,12 @@ body {
 
 /* CURRENTLY TAB */
   #currently {
-    background: saddlebrown url('/images/bgs/webp/034C.webp/');
+    background: saddlebrown url('../images/bgs/webp/034C.webp/');
     border: 0.125em inset goldenrod;
     padding-bottom: 0;
   }
   .yellowheaderbg {
-    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background: saddlebrown url('../images/bgs/webp/cutestars.webp/');
     background-size: 50%;
     border: 0.125em ridge goldenrod;
     border-radius: 0.75em;
@@ -398,7 +398,7 @@ body {
     z-index: 1;
   }
   .cats {
-    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background: saddlebrown url('../images/bgs/webp/cutestars.webp/');
     background-size: 50%;
     border: 0.125em ridge goldenrod;
     border-radius: 0 0.5em 0.5em 0.5em;
@@ -449,18 +449,18 @@ body {
 
 /* TO DO TAB */
   #todo {
-    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background: saddlebrown url('../images/bgs/webp/cutestars.webp/');
     background-size: 50%;
     border: 0.125em inset rosybrown;
   }
   #todobg {
-      background: saddlebrown url('/images/bgs/webp/034C.webp/');
+      background: saddlebrown url('../images/bgs/webp/034C.webp/');
   }
   #todotitle {
       color: gold;
   }
   .todolist {
-    background: saddlebrown url('/images/bgs/webp/034C.webp/');
+    background: saddlebrown url('../images/bgs/webp/034C.webp/');
     border: 0.125em ridge goldenrod;
     border-radius: 0.5em;
     font: 0.8em 'Barecast', sans-serif;
@@ -481,7 +481,7 @@ body {
 
 /* STATS TAB */
   #stats {
-    background: saddlebrown url('/images/bgs/webp/034C.webp/');
+    background: saddlebrown url('../images/bgs/webp/034C.webp/');
     border: 0.125em inset rosybrown;
     padding: 0.5em 0 0 1em;
   }
@@ -540,7 +540,7 @@ body {
   animation: floaty 5s ease-in-out -1s infinite;
 }
   .siteupdatesbox {
-    background: midnightblue url('/images/bgs/gif/145.gif');
+    background: midnightblue url('../images/bgs/gif/145.gif');
     border: 0.125em ridge rosybrown;
     border-radius: 1em;
     height: calc(100%/4.25);
