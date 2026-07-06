@@ -1,0 +1,605 @@
+@font-face {                  
+font-family: 'AnalogueOS';
+src: url(https://humantooth.neocities.org/fonts/AnalogueOS-Regular.woff) format('woff');
+font-weight: normal;
+font-style: normal;
+} 
+@font-face {                  
+font-family: 'Barecast';
+src: url(https://humantooth.neocities.org/fonts/Barecast-Regular.woff2) format('woff2');
+font-weight: normal;
+font-style: normal;
+} 
+/* style-my-tootltips plugin, tooltip styling */
+#s-m-t-tooltip{
+	/* basic */
+	max-width:200px;
+	z-index:10;
+	margin:40px 5px 32px 22px;
+	/* style and design */
+	padding:8px;
+	background:#0000ff; /* fallback if rgba not supported */
+	background: rgba(0, 0, 255, 0.85);
+    border-style: ridge;
+    border-color: black violet violet black;
+	border-width:  0.1em 0.125em 0.125em 0.1em;
+    -moz-border-radius:0.25em;
+	-webkit-border-radius:0.25em;
+	border-radius:0.25em;
+	-moz-box-shadow:0.1em 0.1em 0.3em black;
+	-webkit-box-shadow:0.1em 0.1em 0.3em black;
+	box-shadow: 0.1em 0.1em 0.3em black;
+	/* font */
+    font: 0.85em 'Barecast', sans-serif;
+    text-shadow: 0 0 0.3em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	line-height:16px;
+	color:skyblue;
+}
+body {
+  background: blue url('/images/bgs/webp/bluequilt.webp');
+  background-size: 25%;
+  font-style: italic;
+  text-decoration: none;
+  margin: 2.25em 0 20em 0;
+  padding: 0;
+  height: calc(100vh*1.5);
+  cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat163.cur), default !important;
+}
+
+:hover {
+  cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat163.cur), default !important;
+}
+  .header { 
+    font: 2em 'Rubik Iso', sans-serif;
+    text-shadow: 0 0 0.3em #101033, 0 0 0.5em #101033, -1px 0 midnightblue, 0 1px midnightblue, 1px 0 midnightblue, 0 -1px midnightblue;
+    color: white;
+    text-decoration: none;
+    margin: 0 0 0 1.3em;
+    padding: 0;
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+
+  h1 {
+    transition: .2s ease; 
+    width: 34vw;
+  }
+
+  h1:hover, h1:active {
+    scale: 108%;
+    transform: translateY(0.03em);
+
+  }
+  .mainpage {
+    background: midnightblue url('/images/bgs/webp/065C.webp/');
+    background-size: 50%;
+    border: 0.25em ridge blue;
+    width: 75%;
+    height: 165vh;
+    margin: 1em auto 2em;
+    border-radius: 22px;
+    animation: nauseate 40s infinite linear;
+    animation-fill-mode: none;
+  }
+@keyframes nauseate {
+  from {background-position: 0 432px}
+  to {background-position: 570px -138px}
+}
+  .navall {
+    margin: 3em 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  .navtitle {
+    font: 2.25em 'AnalogueOS', sans-serif;
+    color: #ade0f5;
+    font-style: italic;
+    text-shadow: 0 0 3em black, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 90%;
+    position: absolute;
+    z-index: 1;
+    transform: translateX(-0.4em) translateY(-0.86em);
+}
+  .navtitle:hover {
+    cursor: default;
+    margin: 0;
+    padding: 0;
+    scale: 111%;
+    transform: translateX(-0.4em) translateY(-0.8em);
+  }
+  nav {
+    background: steelblue url('/images/bgs/gif/blueflower.gif/');
+    border-style: outset;
+    border-radius: 1em;
+    border-width: 0.1em;
+    width: 6.3em;
+    list-style-type: none;
+    font: 1.3em 'Barecast', sans-serif;
+    font-style: italic;
+    text-align: left;
+    height: 9.6em;
+    overflow: hidden;
+  }
+  #port {
+    letter-spacing: -0.1em;
+  }
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    margin: 0.1em 0 0.2em;
+  }
+  .dropdown .dropbtn {
+    background-color: skyblue;
+    font-size: inherit;
+    font-family: 'Barecast', sans-serif;
+    font-style: italic;
+    text-align: left;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0.06em 0.15em 0.25em 0.625em;
+    margin: 0.1em 0 0.2em 0.2em;
+    text-decoration: none;
+    display: block;
+    width: 5em;
+    max-height: 50em;
+    border-style: inset;
+    border-radius: 0.75em;
+    border-width: 0.1em;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    font-size: 100%;
+    z-index: 1;
+    transform: translateX(-0.1em) translateY(1.6em);
+    margin: 0.15em 0;
+    padding: 0.1em 0 0.4em;
+  }
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown:hover .dropdown-content {
+    background: steelblue url('/images/bgs/gif/blueflower.gif/');
+    border-style: outset;
+    border-radius: 1em 1em;
+    border-width: 0.1em;
+    width: 6.3em;
+    top: 7.9em;
+    display: block;
+    max-height: 5.5em;
+  }
+  .dropdown:hover .dropbtn, .dropdown:active .dropbtn {
+    background-color: pink;
+    box-shadow: 0 0 0.5em 0.1em pink;
+    font-size: 102%;
+    border-style: outset;
+  }
+  nav a:link, nav a:visited{
+    float: left;
+    background-color: skyblue;
+    border-style: inset;
+    border-radius: 0.75em;
+    border-width: 0.1em;
+    color: white;
+    padding: 0.06em 0.15em 0.25em 0.625em;
+    margin: 0.2em 0 0 0.2em;
+    text-decoration: none;
+    display: block;
+    width: 5em;
+  }  
+  nav a:hover, nav a:active {
+    background-color: pink;
+    box-shadow: 0 0 0.5em 0.1em pink;
+    font-size: 102%;
+    border-style: outset;
+  }
+
+  .mainintrobg {
+    background: midnightblue url('/images/bgs/gif/018.GIF');
+    border: 0.25em ridge cadetblue;
+    border-radius: 22px;
+    padding: 1.25em;
+    margin: 0.25em 2em 1em 2em; 
+    width: 80%;
+    height: 6vh;
+}
+  .mainintrotext {
+    color: powderblue;
+    font: 1em 'AnalogueOS', sans-serif;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 0 0 3em black, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    width: 80%;
+    margin: 0;
+    position: absolute;
+    animation: floaty 4s infinite ease-in-out;
+}
+@keyframes floaty {
+  0%, 100%   {transform: translateY(5.5vh);}
+  50%  {transform: translateY(1.25em);}
+}
+
+  .ogbloglink {
+    color: powderblue;
+    font: 1.5em 'AnalogueOS', sans-serif;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 0 0 0.85em blue, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0.5em 0;  
+    transition: .2s ease; 
+}
+  a.ogbloglink:hover, a.ogbloglink:active {
+    scale: 111%;
+  }
+
+  .spotify {
+    margin: 1em;
+    width: 45%;
+    top: 115vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  .spotifyintro {
+    color: powderblue;
+    font: 1em 'AnalogueOS', sans-serif;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 3em black, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 2;
+    top: -1.75vh;
+}
+  .spotifyintro:hover {
+    scale: 108%;
+    letter-spacing: 0.075em;
+    transform: translateY(0.01em);
+}
+  .leftcolumn {
+    margin: 4em 0 4em 5em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  .middlecolumn {
+    padding: 1em 1em 1em 1em;
+    margin: 0.5em;
+    color: powderblue;
+    font-size: 1.22em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* MINI TABS */
+  aside {
+    margin: 0.75em 0 2em -15em;
+    position: relative;
+  }
+  /* Style the tab */
+  .tab {
+    float: right;
+    width: 6.25vw;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    left: 18.65vw;
+    top: 1.5vh;
+  }
+  /* Style the buttons inside the tab */
+  .tab button {
+    background: saddlebrown url('/images/bgs/webp/034C.webp/');
+    border: 0.125em ridge goldenrod;
+    border-left: none;
+    border-radius: 0 0.75em 0.75em 0;
+    box-shadow: 0.1em 0.1em 0.3em #4c2408;
+    font: 0.75em 'Barecast', sans-serif;
+    text-shadow: 0 0 0.3em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	line-height:16px;
+	color: gold;
+    padding: 0.35em 0.35em 0.5em 0.35em;
+    display: block;
+    width: 100%;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  /* Change background color of buttons on hover */
+  .tab button:hover,   .tab button:active {
+    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background-size: 50%;
+    color: #fff5a5
+  }
+  /* Create an active/current "tab button" class */
+  .tab button.active {
+    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background-size: 50%;
+    color: #fff5a5
+  }
+  /* Style the tab content */
+  .tabcontent {
+    background-color: midnightblue;
+    border: 0.125em ridge violet;
+    border-radius: 0.5em;
+    box-shadow: 0.1em 0.1em 0.3em #4c2408;
+    float: left;
+    margin: 0;
+    padding: 0.5em 0.55em 0 0.5em;
+    width: 17vw;
+    border-left: none;
+    height: 50vh;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+/* CURRENTLY TAB */
+  #currently {
+    background: saddlebrown url('/images/bgs/webp/034C.webp/');
+    border: 0.125em inset goldenrod;
+    padding-bottom: 0;
+  }
+  .yellowheaderbg {
+    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background-size: 50%;
+    border: 0.125em ridge goldenrod;
+    border-radius: 0.75em;
+    margin: 0.75em 0 0;
+    display: inline-block;
+    width: 100%;
+    height: 1.5em;
+  }
+  .yellowheader {
+    font: 2em 'AnalogueOS', sans-serif;
+    color: #ffe060;
+    font-style: italic;
+    text-shadow: 0 0 0.3em #4c2408, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+    margin: 0 0 0.25em;
+    width: 100%;
+    height: 1.1em;
+    top: -0.05em;
+    transform: translateY(-1.06em);
+    position: relative;
+    z-index: 1;
+  }
+  .yellowheader:hover {
+    cursor: default;
+    scale: 105%;
+    transform: translateY(-1em);
+  }
+  .miniheaders {
+    font: 1em 'AnalogueOS', sans-serif;
+    color: #ffe060;
+    font-style: italic;
+    text-shadow: 0 0 0.3em #4c2408, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: left;
+    margin: 0;
+    width: 50%;
+    height: 1.1em;
+    top: -0.05em;
+    z-index: 1;
+  }
+  .cats {
+    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background-size: 50%;
+    border: 0.125em ridge goldenrod;
+    border-radius: 0 0.5em 0.5em 0.5em;
+    margin: 0.75em 0 0;
+    padding: 0.5em 0.25em;
+    width: 95%;
+  }
+  .miniheaders:hover {
+    cursor: default;
+    scale: 111%;
+    transform: translateX(0.2em);
+  }
+  .currentinfo {
+    display: inline-block;
+    transform: translateY(-2.25em);
+  }
+  .mininfo, #statuscafe {
+    font: 0.8em 'Barecast', sans-serif;
+    color: #fff5a5;
+    font-style: normal;
+    text-shadow: 0 0 0.5em #4c2408, -1px 0 #332215, 0 1px #332215, 1px 0 #332215, 0 -1px #332215;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    width: 95%;
+    height: auto;
+    top: 3.75vh;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  #statuscafe-username a {
+    font-style: italic;
+    text-align: left;
+    color: #fff5a5;
+    text-decoration: wavy underline;
+  }
+  #statuscafe-username {
+    margin: 0 0 0.4em;
+  }
+  #statuscafe-content {
+    margin: 0;
+  }
+  #statuscafe-username a:hover,#statuscafe-username a:active {
+    color: gold;
+    text-decoration: wavy underline;
+  }
+
+/* TO DO TAB */
+  #todo {
+    background: saddlebrown url('/images/bgs/webp/cutestars.webp/');
+    background-size: 50%;
+    border: 0.125em inset rosybrown;
+  }
+  #todobg {
+      background: saddlebrown url('/images/bgs/webp/034C.webp/');
+  }
+  #todotitle {
+      color: gold;
+  }
+  .todolist {
+    background: saddlebrown url('/images/bgs/webp/034C.webp/');
+    border: 0.125em ridge goldenrod;
+    border-radius: 0.5em;
+    font: 0.8em 'Barecast', sans-serif;
+    color: gold;
+    text-shadow: 0 0 0.5em #4c2408, -1px 0 #332215, 0 1px #332215, 1px 0 #332215, 0 -1px #332215;
+    padding: 1em 2em;
+    margin: 0;
+    line-height: 1.75em;
+    height: auto;
+    overflow-y: visible;
+    transform: translateY(-2.25em);
+  }
+  li:hover, li:active {
+    cursor: default;
+    scale: 108%;
+    transform: translateX(0.6em);
+  }
+
+/* STATS TAB */
+  #stats {
+    background: saddlebrown url('/images/bgs/webp/034C.webp/');
+    border: 0.125em inset rosybrown;
+    padding: 0.5em 0 0 1em;
+  }
+  #statstitlebg {
+    top: 0.1em;
+  }
+  .statstitle {
+    margin: 0 0 0.65em;
+    width: 90%;
+  }
+  .statsinfo {
+    transform: translateY(-2em);
+  }
+  .viewers {
+    font: 1em 'AnalogueOS', sans-serif;
+    color: #ffe060;
+    font-style: italic;
+    text-shadow: 0 0 0.3em saddlebrown, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: left;
+    margin: 0 0 0.4em;
+    width: 75%;
+    height: 1.1em;
+    top: -0.05em;
+    z-index: 1;
+    padding: 0;
+}
+  .viewers:hover, .viewers:active {
+    cursor: default;
+    scale: 111%;
+    transform: translateX(0.2em);
+  }
+  #flags {
+    width: 85%;
+    margin-top: 0.5em;
+    margin-left: -0.5em;
+}
+  .rightcolumn {
+    margin: 0 5em 1em 0;
+    text-shadow: 0 0 3em #0000ff, 0 0 0.5em blue, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #gato {
+  background: #FE82B624;
+  -webkit-mask-image: url(https://i.imgur.com/1PjqQS6.png);
+  mask-image: url(https://i.imgur.com/1PjqQS6.png);
+  -webkit-mask-size: 200%;
+  mask-size: 200%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: -150px -25px;
+  mask-position: -140px -22px;
+  margin-bottom: 1.5em;
+  animation: floaty 5s ease-in-out -1s infinite;
+}
+  .siteupdatesbox {
+    background: midnightblue url('/images/bgs/gif/145.gif');
+    border: 0.125em ridge rosybrown;
+    border-radius: 1em;
+    height: calc(100%/4.25);
+    margin: 1.75em 0 1em;
+  }
+  .subg {
+    background: midnightblue;
+    border: 0.1em inset violet;
+    border-radius: 0.75em;
+    margin: 0.5em 0 0;
+    display: inline-block;
+    width: 95%;
+    height: 0.9em;
+  }
+  .siteupdates {
+    font: 1.9em 'AnalogueOS', sans-serif;
+    color: powderblue;
+    font-style: italic;
+    text-shadow: 0 0 0.3em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0;
+    display: inline-block;
+    width: 90%;
+    height: 0.5em;
+    transform: translateY(-1.018em);
+    position: relative;
+    z-index: 1;
+  }
+  .siteupdates:hover {
+    cursor: default;
+    scale: 111%;
+    transform: translateY(-0.958em);
+  }
+  #suinfo {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 12vw;
+    height: 23vh;
+    display: inline-block;
+    position: relative;
+    transform: translateY(-1.75em);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+  .blinkies {
+    margin: 1em 0;
+}
+
+  footer {
+    padding: 1.25em;
+    text-align: center;
+    transform: translateY(32vh);
+    filter: drop-shadow(0 0 0.08em midnightblue);
+  }
+
+  .row {
+    margin: auto;
+    border-radius: 22px;
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+  }
+  

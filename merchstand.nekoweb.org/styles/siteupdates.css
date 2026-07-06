@@ -1,0 +1,29 @@
+@font-face {                  
+font-family: 'Barecast';
+src: url(https://humantooth.neocities.org/fonts/Barecast-Regular.woff2) format('woff2');
+font-weight: normal;
+font-style: normal;
+} 
+
+h4 {
+    text-shadow: 0 0 0.2em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0.75em 0 0;
+}
+p {
+    margin-top: 0.75em;
+    margin-bottom: 1.5em;
+}
+  .suinfo {
+    background: midnightblue;
+    border: 0.125em ridge violet;
+    border-radius: 0.25em;
+    font: 0.85em 'Barecast', sans-serif;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: powderblue;
+    padding: 0 0.5em;
+    width: 85%;
+    display: inline-block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 10em;
+  }

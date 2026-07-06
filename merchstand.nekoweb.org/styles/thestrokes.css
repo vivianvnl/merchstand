@@ -1,0 +1,24 @@
+@font-face {                  
+font-family: 'FT88-Italic';
+src: url(https://humantooth.neocities.org/fonts/FT88-Italic.woff) format('woff');
+font-weight: normal;
+font-style: normal;
+} 
+
+body {
+  background: blue url('/images/music/strokes/TheStrokesbyRogerWoolman.webp');
+  background-size: 25%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+h1 {
+  font: 9em FT88-Italic, sans-serif;
+  color: #97f5f8;
+  text-shadow: 0 0 0.375em black, 0 0 0.1em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
+  rotate: -5deg;
+  margin: 0.75em 0 0 0;
+}

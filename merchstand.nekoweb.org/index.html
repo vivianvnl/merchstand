@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>merch stand</title>
+  <!--styles, fonts, n icons-->
+  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="https://fontcity.neocities.org/fakereceipt.css?family=fake+receipt">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/images/favicons/merchstand_favicon.webp">
+  <!--scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="https://static.tumblr.com/lspzyz3/xloqk6cgp/jquery.style-my-tooltips.js"></script>
+<script>
+							(function($){
+							$(document).ready(function(){
+							$("[title]").style_my_tooltips({
+							tip_follows_cursor: true,
+							tip_delay_time:10,
+							tip_fade_speed:150,
+							attribute:"title"
+							});
+							});
+							})(jQuery);
+</script>
+<script type="text/javascript">
+// <![CDATA[
+var sparks=75; // how many sparks per clicksplosion
+var speed=33; // how fast - smaller is faster
+var bangs=5; // how many can be launched simultaneously (note that using too many can slow the script down)
+var colours=new Array('#03f', '#f03', '#0e0', '#93f', '#0cf', '#f93', '#f0c'); 
+//                     blue    red     green   purple  cyan    orange  pink
+
+/****************************
+*   Clicksplosion Effect    *
+*(c)2012-3 mf2fm web-design *
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+var intensity=new Array();
+var Xpos=new Array();
+var Ypos=new Array();
+var dX=new Array();
+var dY=new Array();
+var stars=new Array();
+var decay=new Array();
+var timers=new Array();
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var count=0;
+
+function addLoadEvent(funky) {
+  var oldonload=window.onload;
+  if (typeof(oldonload)!='function') window.onload=funky;
+  else window.onload=function() {
+    if (oldonload) oldonload();
+    funky();
+  }
+}
+
+addLoadEvent(clicksplode);
+
+function clicksplode() { if (document.getElementById) {
+  var i, j;
+  window.onscroll=set_scroll;
+  window.onresize=set_width;
+  document.onclick=eksplode;
+  set_width();
+  set_scroll();
+  for (i=0; i<bangs; i++) for (j=sparks*i; j<sparks+sparks*i; j++) {
+    stars[j]=createDiv('*', 13);
+    document.body.appendChild(stars[j]);
+  }
+}}
+
+function createDiv(char, size) {
+  var div, sty;
+  div=document.createElement('div');
+  sty=div.style;
+  sty.font=size+'px monospace';
+  sty.position='absolute';
+  sty.backgroundColor='transparent';
+  sty.visibility='hidden';
+  sty.zIndex='101';
+  div.appendChild(document.createTextNode(char));
+  return (div);
+}
+
+function bang(N) {
+  var i, Z, A=0;
+  for (i=sparks*N; i<sparks*(N+1); i++) { 
+    if (decay[i]) {
+      Z=stars[i].style;
+      Xpos[i]+=dX[i];
+      Ypos[i]+=(dY[i]+=1.25/intensity[N]);
+      if (Xpos[i]>=swide || Xpos[i]<0 || Ypos[i]>=shigh+sdown || Ypos[i]<0) decay[i]=1;
+	  else {
+        Z.left=Xpos[i]+'px';
+        Z.top=Ypos[i]+'px';
+	  }
+      if (decay[i]==15) Z.fontSize='7px';
+      else if (decay[i]==7) Z.fontSize='2px';
+      else if (decay[i]==1) Z.visibility='hidden';
+	  decay[i]--;
+	}
+	else A++;
+  }
+  if (A!=sparks) timers[N]=setTimeout('bang('+N+')', speed);
+}
+
+function eksplode(e) { 
+  var x, y, i, M, Z, N;
+  set_scroll();
+  y=(e)?e.pageY:event.y+sdown;
+  x=(e)?e.pageX:event.x+sleft;
+  N=++count%bangs;
+  M=Math.floor(Math.random()*3*colours.length);
+  intensity[N]=5+Math.random()*4;
+  for (i=N*sparks; i<(N+1)*sparks; i++) {
+    Xpos[i]=x;
+    Ypos[i]=y-5;
+    dY[i]=(Math.random()-0.5)*intensity[N];
+    dX[i]=(Math.random()-0.5)*(intensity[N]-Math.abs(dY[i]))*1.25;
+    decay[i]=16+Math.floor(Math.random()*16);
+    Z=stars[i].style;
+    if (M<colours.length) Z.color=colours[i%2?count%colours.length:M];
+    else if (M<2*colours.length) Z.color=colours[count%colours.length];
+    else Z.color=colours[i%colours.length];
+    Z.fontSize='13px';
+    Z.visibility='visible';
+  }
+  clearTimeout(timers[N]);
+  bang(N);
+} 
+
+function set_width() {
+  var sw_min=999999;
+  var sh_min=999999;
+  if (document.documentElement && document.documentElement.clientWidth) {
+    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+  }
+  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+  }
+  if (document.body.clientWidth) {
+    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+  }
+  if (sw_min==999999 || sh_min==999999) {
+    sw_min=800;
+    sh_min=600;
+  }
+  swide=sw_min-7;
+  shigh=sh_min-7;
+}
+
+function set_scroll() {
+  if (typeof(self.pageYOffset)=='number') {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+    sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+// ]]>
+</script>
+  </head>
+    
+<body>
+<!--header-->
+  <h1>
+    <a href="https://merchstand.nekoweb.org/" class="header"><i>merch<span style='letter-spacing: 0.1em;'>&#xa0;</span>stand</i></a>
+  </h1>
+<!--inner page-->
+  <div class="mainpage">   
+    <div class="row">
+<!--left column-->
+      <section class='leftcolumn'>
+        <div class='navall'>
+          <p class='navtitle' title='i live here :)'>navigation</p>
+          <nav>
+            <a href="#" title='wip,,,'>about</a>
+            <a href="#" title='wip,,,'>blog</a>
+            <a href="https://vivianvnl.github.io/" target="_blank" title='&#x5c;&#x5c;&#x28;0&#8964;0&#x29;&#x2f;&#x2f;' id='port'>portfolio</a>
+            <a href="https://merchstand.atabook.org/" target="_blank" title='sign !!!' style='letter-spacing: -0.09em;'>guestbook</a>
+            <div class="dropdown">
+              <a href="/likes/" class="dropbtn">likes &gt;</a>
+                <div class="dropdown-content">
+                <a href="#" title='wip,,,'>books</a>
+                <a href="#" title='wip,,,'>movies</a>
+                <a href="/likes/music.html" title='GOOSE!'>music</a>
+                </div>
+            </div>
+          </nav>
+        </div>
+        <img src="/images/buttons/smoke.gif" width="150px" style='margin-top: 6em;'>
+        <img src="/images/buttons/na.jpg" width="150px" style='margin-top: 3em;'>
+      </section>
+<!--middle column-->
+      <section class="middlecolumn">
+        <div class='mainintrobg'></div>  
+        <p class="mainintrotext">welcome to the land<br>where only my opinion rulez</p>
+        <a class="ogbloglink" title="my media reviews blog :)"
+        href="https://merchstand.blog" target="_blank"> my og blog :D
+        </a>
+        <!-- FC2 Clap tag starts here -->
+        <a href="//clap.fc2.com/post/merchstand/?url=https%3A%2F%2Fmerchstand.nekoweb.org%2F&title=index.html" target="_blank" title="give my site a clap &#x3a;&#x29;&#x29;"><img src="//clap.fc2.com/images/button/orange/merchstand?url=https%3A%2F%2Fmerchstand.nekoweb.org%2F&amp;lang=en" alt="Web Clap by FC2" style="border:none;padding:0;margin:0;width:115%;align-items: center;" /></a>
+        <!-- FC2 Clap tag ends here -->
+  <!--currently, stats, etc.-->
+        <aside class='minicontent'>
+          <div class="tab">
+          <button class="tablinks" onclick="openCat(event, 'currently')" id="defaultOpen" style='margin-bottom:0.5em'>currently</button>
+          <button class="tablinks" onclick="openCat(event, 'todo')" style='margin-bottom:0.5em'>to do</button>
+          <button class="tablinks" onclick="openCat(event, 'stats')">stats</button>
+          </div>
+          <div id="currently" class="tabcontent">
+            <div class='yellowheaderbg'></div> 
+            <p class='yellowheader'>on my mind...</p>
+            <div class='currentinfo'>
+              <div class='cats'>
+              <p class="miniheaders" style='margin-top: 0;' title='i love my cat &#x28;and ur mom&#x29;'>status:</p>
+              <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div>
+              <script src="https://status.cafe/current-status.js?name=merchstand" defer></script>  
+              </div>
+              <div class='cats'>
+              <p class="miniheaders">feeling:</p>
+              <a href="https://www.imood.com/users/merchstand"><img src="https://moods.imood.com/display/uname-merchstand/fg-fffad2/bg-925b06/imood.gif" alt="The current mood of merchstand at www.imood.com" style='width: 50%'></a>
+              </div>
+              <div class='cats'>
+              <p class="miniheaders">watching:</p>
+              <p class='mininfo' title='BAZINGA'>big bang theory</p>
+              </div>
+              <div class='cats'>
+              <p class="miniheaders">reading:</p>
+              <p class='mininfo'>those who leave and those who stay by elena ferrante</p>
+              </div>
+              <div class='cats'>
+              <p class="miniheaders">listening to:</p>
+              <p class='mininfo' style='margin-bottom: 0;' title='THIS! LOVE! HAS! TAKEN! ITS! TOLL! ON! ME! SHE! SAID! GOODBYE! TOO! MANY! TIMES! BEFORE!'>maroon 5 - songs about jane (best album ever made ever)</p>
+              </div>
+              <div class='cats'>
+              <p class="miniheaders">working on:</p>
+              <p class='mininfo' style='margin-bottom: 0;'>this site n my portfolio site + odin project</p>
+              </div>
+            </div>
+          </div>
+          <div id="todo" class="tabcontent">
+            <div class='yellowheaderbg' id='todobg'></div> 
+            <p class='yellowheader' id='todotitle'>to do...</p>
+            <ul class='todolist'>
+              <li>music player</li>
+              <li>chatbox</li>
+              <li>blog page</li>
+              <li>about page</li>
+              <li>likes pages</li>
+              <li>music subpages</li>
+              <li>footer notes</li>
+            </ul>  
+          </div>
+            <div id="stats" class="tabcontent">
+              <div class='statstitle'>
+                <div class='yellowheaderbg' id='statstitlebg'></div> 
+                <p class='yellowheader'>stats</p>
+              </div>
+              <div class='statsinfo'>
+                <p class='viewers' title='hello!!'>current viewers:</p>
+                <script type="text/javascript" src="//counter1.fc2.com/views.php?id=40489810&main=1"></script><noscript><img src="//counter1.fc2.com/counter_now.php?id=40489810&main=1" /></noscript>
+                <p class='viewers' title='hello!!' style='margin-top: 0.75em;'>visitor number:</p>
+                <script type="text/javascript" src="//counter1.fc2.com/counter.php?id=40489810&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=40489810&main=1"/></noscript>
+                <a href="https://info.flagcounter.com/bb7x">
+                <img src="https://s01.flagcounter.com/count/bb7x/bg_FFFFFF/txt_0000FF/border_EE82EE/columns_3/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter"  style='margin-top: 1em; margin-left: 0' title='hello!!' id='flags'></a>
+              </div>
+            </div>
+          
+          <script>
+          function openCat(evt, catName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(catName).style.display = "block";
+            evt.currentTarget.className += " active";
+          }
+
+          // Get the element with id="defaultOpen" and click on it
+          document.getElementById("defaultOpen").click();
+          </script>
+        </aside>
+  <!-- END currently, stats, etc.-->
+        <div class='spotify'>
+        <p class='spotifyintro'>what i'm currently listenin' to</p>
+        <iframe class='spotifyplayer' title='my current bangerz' data-testid="embed-iframe" style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/6O4Hl22ZeKVYIn12nMTPJz?utm_source=generator&theme=0" 
+      width="50%" height="352" allowfullscreen="" allow="autoplay; clipboard-write; 
+      encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </section>
+<!--right column-->
+      <div class="rightcolumn">
+        <img src="/images/gato.webp" id='gato' title="da most beautiful cat in da world" alt="cat" width=275>
+        <div class="siteupdatesbox">
+          <div class='subg'></div> 
+          <p class="siteupdates">site updates:</p>
+          <iframe title='site updates' id="suinfo" data-testid="embed-iframe"
+      src="/home/siteupdates.html" loading="lazy"></iframe>
+        </div>
+        <div class='blinkies'>
+        <img src="/images/buttons/amcoder.gif/" width="160px">
+        <img src="/images/gif/blcatletsmelivehere2.gif/" width="160px">
+        </div>
+      </div>
+    </div>
+<!--footer-->
+    <footer>
+      <a href="https://nekoweb.org/" id="nekowebbutton"><img src="https://nekoweb.org/assets/buttons/button5.gif"></a>
+<!--check follow button below on upload-->
+      <iframe src="https://nekoweb.org/frame/follow" title='follow me :)' width="139" height="21"></iframe>
+      <img src="/images/buttons/nomie.gif" width="240px">
+      <img src="/images/buttons/sucks2.gif" width="70px">
+      <img src="/images/buttons/bestviewedondt.gif/" width="85px">
+    </footer>
+  </div>
+
+<img src="/images/gatosmall.webp" width=0>
+
+</body>
+</html>

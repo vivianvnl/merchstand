@@ -1,0 +1,134 @@
+@font-face {                  
+font-family: 'AnalogueOS';
+src: url(https://humantooth.neocities.org/fonts/AnalogueOS-Regular.woff) format('woff');
+font-weight: normal;
+font-style: normal;
+} 
+@font-face {                  
+font-family: 'Barecast';
+src: url(https://humantooth.neocities.org/fonts/Barecast-Regular.woff2) format('woff2');
+font-weight: normal;
+font-style: normal;
+} 
+
+body {
+  background: blue url('/images/music/cdstore.webp');
+  background-size: 100%;
+  background-position-y: -200px;
+  background-position-x: center;
+  margin: 0;
+  padding: 0;
+  overflow-y: visible;
+}
+.collection {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  top: -10vh;
+  scale: 90%;
+}
+.backhome { 
+  position: sticky;
+  font: 0.75em 'fake receipt', sans-serif;
+  text-shadow: 0 0 0.375em black, 0 0 0.1em black;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15em;
+  box-shadow: 0 0 0.5em 0.1em rgba(0, 0, 0, 0.4);
+  margin: 0 0 0 1.5em;
+  overflow: hidden;
+  z-index: 3;
+}
+h1 { 
+  font: 3.5em 'fake receipt', sans-serif;
+  text-shadow: 0 0 0.375em black, 0 0 0.1em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  text-decoration: none;
+  border-radius: 15em;
+  margin: 0.6em 0 0 1.5em;
+  padding: 0 0.1em;
+  overflow: hidden;
+  width: 3.75em;
+  position: absolute;
+  z-index: 2;
+}
+.lastfm {
+  border: 0.125em ridge skyblue;
+  border-radius: 0.25em;
+  position: absolute;
+  top: 74.5vh;
+  left: 1.5vw;
+  width: 22vw;
+  animation: floaty 4s infinite ease-in-out;
+}
+@keyframes floaty {
+  0%, 100%   {transform: translateY(5.5vh);}
+  50%  {transform: translateY(1.25em);}
+}
+.recordshelves {
+  background: url(/images/music/recordshelves.webp);
+    background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  -webkit-filter: drop-shadow(3px 2px 0 black)
+                  drop-shadow(-3px -3px 0 black);
+  filter: drop-shadow(3px 4px 0 black) 
+          drop-shadow(-3px -2px 0 black);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  z-index: 1;
+  top: 3vw;
+  left: 18vw;
+  width: 62vw;
+  height: 43vw;
+}
+.records {
+  position: absolute;
+  z-index: 3;
+}
+.strokes {
+  position: absolute;
+  width: 16vw;
+  top: 10.5vw;
+  left: 27.25vw;
+  z-index: 1;
+}
+.am {
+  position: absolute;
+  width: 11.5vw;
+  top: 11.25vw;
+  left: 43.25vw;
+  z-index: 1;
+}
+.djo {
+  position: absolute;
+  width: 12.5vw;
+  top: 11.5vw;
+  left: 58vw;
+  z-index: 1;
+}
+.killers {
+  position: absolute;
+  width: 9.75vw;
+  top: 27.6vw;
+  left: 28.9vw;
+  z-index: 1;
+}
+
+.strokes:hover {
+  scale: 105%;
+  translate: -0.5vw -0.1vh;
+}
+.am:hover {
+  scale: 105%;
+  translate: 0.1vw -0.1vh;
+}
+.djo:hover {
+  scale: 105%;
+  translate: 0.1vw 0.2vh;
+}
+.killers:hover {
+  scale: 105%;
+  translate: 0.1vw 0.5vh;
+}
