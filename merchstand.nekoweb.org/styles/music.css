@@ -12,7 +12,7 @@ font-style: normal;
 } 
 
 body {
-  background: blue url('/images/music/cdstore.webp');
+  background: blue url('../images/music/cdstore.webp');
   background-size: 100%;
   background-position-y: -200px;
   background-position-x: center;
@@ -67,7 +67,7 @@ h1 {
   50%  {transform: translateY(1.25em);}
 }
 .recordshelves {
-  background: url(/images/music/recordshelves.webp);
+  background: url(../images/music/recordshelves.webp);
     background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
