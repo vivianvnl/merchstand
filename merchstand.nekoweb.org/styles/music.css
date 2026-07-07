@@ -116,6 +116,30 @@ h1 {
   z-index: 1;
 }
 
+.arcadefire {
+  position: absolute;
+  width: 9.58vw;
+  top: 28vw;
+  left: 38.9vw;
+  z-index: 1;
+}
+
+.muse {
+  position: absolute;
+  width: 8.9vw;
+  top: 28.6vw;
+  left: 49.6vw;
+  z-index: 1;
+}
+
+.fontainesdc {
+  position: absolute;
+  width: 11vw;
+  top: 28.75vw;
+  left: 59vw;
+  z-index: 1;
+}
+
 .strokes:hover {
   scale: 105%;
   translate: -0.5vw -0.1vh;
@@ -130,5 +154,17 @@ h1 {
 }
 .killers:hover {
   scale: 105%;
-  translate: 0.1vw 0.5vh;
+  translate: -0.2vw 0.5vh;
+}
+.arcadefire:hover {
+  scale: 105%;
+  translate: -0.2vw 0.5vh;
+}
+.muse:hover {
+  scale: 105%;
+  translate: 0.2vw 0.2vh;
+}
+.fontainesdc:hover {
+  scale: 105%;
+  translate: 0.25vw 0.3vh;
 }
