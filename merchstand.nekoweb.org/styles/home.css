@@ -10,7 +10,7 @@ src: url(https://humantooth.neocities.org/fonts/Barecast-Regular.woff2) format('
 font-weight: normal;
 font-style: normal;
 } 
-/* style-my-tootltips plugin, tooltip styling */
+/* style-my-tootltips plugin, tooltip stylng */
 #s-m-t-tooltip{
 	/* basic */
 	max-width:200px;
@@ -235,21 +235,25 @@ body {
   text-align: center;
   margin: 0;
   padding: 0 0 1em;
+  list-style-type: none;
 }
 
-  .rpLink {
-    color: powderblue;
-    font: 1.5em 'AnalogueOS', sans-serif;
-    font-style: italic;
-    text-shadow: 0 0 0.85em blue, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    margin: 0;
-    transition: .2s ease; 
+.rpLink {
+  color: powderblue;
+  font: 1.5em 'AnalogueOS', sans-serif;
+  font-style: italic;
+  text-shadow: 0 0 0.85em blue, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin: 0;
+  transition: .2s ease;
+  z-index: 5;
 }
-/*
-  a.rpLink:hover, a.rpLink:active {
-    scale: 111%;
-}
-*/
+
+.reviewPageLinks li:hover, .reviewPageLinks li:active {
+    cursor: default;
+    scale: 108%;
+    transform: translateX(0.1em) translateY(0.1em);
+  }
+
 
   .spotify {
     margin: 1em;
@@ -480,11 +484,12 @@ body {
     overflow-y: visible;
     transform: translateY(-2.25em);
   }
-  li:hover, li:active {
+  .todolist li:hover, .todolist li:active {
     cursor: default;
     scale: 108%;
     transform: translateX(0.6em);
   }
+
 
 /* STATS TAB */
   #stats {
