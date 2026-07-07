@@ -1,0 +1,86 @@
+@font-face {                  
+font-family: 'CHNOPixel-Italic';
+src: url(https://humantooth.neocities.org/fonts/CHNOPixelCodePro-Italic.woff) format('woff');
+font-weight: normal;
+font-style: normal;
+} 
+
+* {
+    margin: 0;
+}
+
+body {
+    background: lightpink url('../images/bgs/webp/flowertile.webp');
+    background-size: 25%;
+    text-decoration: none;
+    padding: 2.5em 0 20em 0;
+    height: calc(100vh*0.75);
+    margin: 0;
+    cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat163.cur), default !important;
+}
+
+main {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 15px;
+} 
+
+h1 {
+    font-family: 'CHNOPixel-Italic';
+    font-size: 65px;
+    transform: scaleY(1.1);
+    word-spacing: -0.25em;
+    color: lightpink;
+    -webkit-text-stroke: 0.5px hotpink;
+    text-align: center;
+    animation: floaty 4s infinite ease-in-out;
+    margin: 50px 0 0;
+}
+
+@keyframes floaty {
+  0%, 100%   {transform: translateY(-8vh);}
+  50%  {transform: translateY(-0.5em);}
+}
+
+p {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    -webkit-text-stroke: 0.2px magenta;
+}
+
+.backhome { 
+  position: sticky;
+  font: 1em 'fake receipt', sans-serif;
+  text-shadow: 0 0 0.375em pink, 0 0 0.1em pink;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(255, 192, 203, 0.3);
+  border-radius: 15em;
+  box-shadow: 0 0 0.5em 0.1em rgba(255, 192, 203, 0.4);
+  margin: 0 0 0 1.5em;
+  overflow: hidden;
+  z-index: 3;
+}
+
+#windowsbox {
+    margin: 0 auto;
+}
+
+.aboutme {
+    margin: 0 auto;
+    border-width: 7px;
+    border-style: solid;
+    border-image: url(../images/bgs/gif/fmru60.gif) 7 fill round;
+} 
+
+#aboutmeinfo {
+    background-image: url(../images/bgs/webp/035C.webp);
+    border-style: ridge;
+    border-color: lightpink;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 0;
+}
