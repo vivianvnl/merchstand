@@ -246,12 +246,14 @@ body {
   margin: 0;
   transition: .2s ease;
   z-index: 5;
+  list-style-type: none;
 }
 
 .reviewPageLinks li:hover, .reviewPageLinks li:active {
     cursor: default;
     scale: 108%;
     transform: translateX(0.1em) translateY(0.1em);
+    list-style-type: none;
   }
 
 
