@@ -3,10 +3,17 @@ font-family: 'CHNOPixel-Italic';
 src: url(https://humantooth.neocities.org/fonts/CHNOPixelCodePro-Italic.woff) format('woff');
 font-weight: normal;
 font-style: normal;
+}
+@font-face {                  
+font-family: 'Barecast';
+src: url(https://humantooth.neocities.org/fonts/Barecast-Regular.woff2) format('woff2');
+font-weight: normal;
+font-style: normal;
 } 
 
 * {
     margin: 0;
+    cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat163.cur), default !important;
 }
 
 body {
@@ -16,7 +23,6 @@ body {
     padding: 2.5em 0 20em 0;
     height: calc(100vh*0.75);
     margin: 0;
-    cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat163.cur), default !important;
 }
 
 main {
@@ -24,7 +30,7 @@ main {
     display: flex;
     flex-direction: column;
     margin: auto;
-    gap: 15px;
+    gap: 20px;
 } 
 
 h1 {
@@ -36,7 +42,7 @@ h1 {
     -webkit-text-stroke: 0.5px hotpink;
     text-align: center;
     animation: floaty 4s infinite ease-in-out;
-    margin: 50px 0 0;
+    margin: 60px 0 0;
 }
 
 @keyframes floaty {
@@ -44,16 +50,23 @@ h1 {
   50%  {transform: translateY(-0.5em);}
 }
 
-p {
+h1:hover {
+scale: 102%;
+transform: translateY(-1em);
+}
+
+p, a {
     color: white;
-    font-size: 18px;
-    font-weight: 600;
-    -webkit-text-stroke: 0.2px magenta;
+    font: 18px 'Barecast', sans-serif;
+    text-shadow: 0 0 2em pink, 0 0 0.5em magenta, -1px 0 magenta, 0 1px magenta, 1px 0 magenta, 0 -1px magenta;
+    text-decoration: none;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px white;
 }
 
 .backhome { 
   position: sticky;
-  font: 1em 'fake receipt', sans-serif;
+  font: 0.5em 'fake receipt', sans-serif;
   text-shadow: 0 0 0.375em pink, 0 0 0.1em pink;
   color: white;
   text-decoration: none;
@@ -65,8 +78,18 @@ p {
   z-index: 3;
 }
 
+h2:hover {
+scale: 102.5%;
+transform: translateX(0.4em);
+}
+
 #windowsbox {
     margin: 0 auto;
+    transition: .3s ease; 
+}
+
+#windowsbox:hover {
+    box-shadow: 0 0 20em 3em rgba(255, 0, 255, 0.12);
 }
 
 .aboutme {
@@ -81,6 +104,23 @@ p {
     border-style: ridge;
     border-color: lightpink;
     border-radius: 10px;
-    padding: 1em;
+    padding: 2em 1.5em;
     margin: 0;
+    opacity: 85%;
+}
+
+#aboutmeinfo p {
+    opacity: 100%;
+}
+
+footer {
+    padding: 0 0 7vh 12vh;
+}
+
+footer p, a {
+    font-size: 15px;
+    text-shadow: 0 0 2em pink, 0 0 0.5em pink, -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+    text-decoration: none;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px white;
 }
