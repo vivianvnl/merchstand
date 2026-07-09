@@ -629,13 +629,13 @@ body {
 }
 
   footer {
-    padding: 1.25em 0;
+    padding: 5vh 0 1vh;
     margin: 0;
     align-items: center;
-    padding-top: 5vh;
     filter: drop-shadow(0 0 0.08em midnightblue);
     display: flex;
     flex-direction: column;
+    gap: 15px;
   }
 
 footer p {
