@@ -2,6 +2,10 @@
     cursor: default;
 }
 
+p, a, h1 {
+    color: white;
+}
+
 body {
     background: blue url('../images/books/booksBG.webp');
     background-position: center;
@@ -59,26 +63,27 @@ transform: translateX(2em);
 .goodreadsApi {
     display: grid;
     grid-template-columns: 1.5fr 2fr;
-    gap: 100px;
-    padding: 0 200px;
+    gap: 10px;
+    padding: 0 80px 0 150px;
     justify-items: center;
 } 
 
-.goodreadsApi h2, .goodreadsApi a {
+.goodreadsApi h2, p, a {
     font: 1.25em 'fake receipt', sans-serif;
     text-shadow: 0 0 0.375em orange, 0 0 0.1em orange;
     color: white;
     text-decoration: none;
+    transform: translateX(0);
 }
 
 #faveReads h2 {
-    padding-left: 1em;
-    width: 25em;
+    transform: translateX(1em);
+    width: 20em;
 }
 
 #recentReads h2 {
-    padding-right: 5em;
-    width: 28em;
+    transform: translateX(0.5em);
+    width: 26.5em;
 }
 
 #faveReads {
@@ -91,6 +96,7 @@ transform: translateX(2em);
 
 .gr_grid_container {
     max-width: 550px;
+    color: white;
 }
 
 .gr_grid_book_container {
@@ -102,3 +108,10 @@ transform: translateX(2em);
   overflow: hidden;
 }
 
+footer {
+    padding: 0 0 7vh 12vh;
+}
+
+footer a, p {
+    font-size: 15px;
+}
