@@ -11,6 +11,32 @@ font-weight: normal;
 font-style: normal;
 } 
 
+/* style-my-tootltips plugin, tooltip stylng */
+#s-m-t-tooltip{
+	/* basic */
+	max-width:200px;
+	z-index:10;
+	margin:40px 5px 32px 22px;
+	/* style and design */
+	padding:8px;
+	background:#0000ff; /* fallback if rgba not supported */
+	background: rgba(0, 0, 255, 0.85);
+    border-style: ridge;
+    border-color: black violet violet black;
+	border-width:  0.1em 0.125em 0.125em 0.1em;
+    -moz-border-radius:0.25em;
+	-webkit-border-radius:0.25em;
+	border-radius:0.25em;
+	-moz-box-shadow:0.1em 0.1em 0.3em black;
+	-webkit-box-shadow:0.1em 0.1em 0.3em black;
+	box-shadow: 0.1em 0.1em 0.3em black;
+	/* font */
+    font: 0.85em 'Barecast', sans-serif;
+    text-shadow: 0 0 0.3em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	line-height:16px;
+	color:skyblue;
+}
+
 body {
   background: blue url('../images/music/cdstore.webp');
   background-size: 100%;
@@ -19,7 +45,13 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: visible;
+  cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat163.cur), default !important;
 }
+
+:hover {
+  cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat163.cur), default !important;
+}
+
 .collection {
   width: 100%;
   height: 400px;
@@ -62,6 +94,7 @@ h1 {
   width: 22vw;
   animation: floaty 4s infinite ease-in-out;
 }
+
 @keyframes floaty {
   0%, 100%   {transform: translateY(5.5vh);}
   50%  {transform: translateY(1.25em);}
