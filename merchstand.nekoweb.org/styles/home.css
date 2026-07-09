@@ -168,7 +168,7 @@ body {
     display: none;
     position: absolute;
     font-size: 100%;
-    margin: 1.5em -0.05em;
+    margin: 1.5em -0.1em;
     padding: 0.1em 0 0.4em;
   }
   .dropdown-content a {
