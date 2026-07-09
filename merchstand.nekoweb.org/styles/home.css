@@ -111,15 +111,14 @@ body {
     color: #ade0f5;
     font-style: italic;
     text-shadow: 0 0 3em black, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    z-index: 1;
+    z-index: 3;
 }
   .navtitle:hover {
     cursor: default;
     margin: 0;
     padding: 0;
     scale: 111%;
-    /*transform: translateX(-0.4em) translateY(-0.8em);*/
-  }
+}
   nav {
     background: steelblue url('../images/bgs/gif/blueflower.gif/');
     border-style: outset;
@@ -134,10 +133,7 @@ body {
     overflow: hidden;
     margin: 0;
     margin: -0.75em;
-  }
-
-  nav:hover {
-    height: 12em;
+    z-index: 2;
   }
 
   #port {
@@ -171,8 +167,7 @@ body {
     display: none;
     position: absolute;
     font-size: 100%;
-    z-index: 1;
-    margin: 2.9em -0.1em;
+    margin: 1.5em -0.05em;
     padding: 0.1em 0 0.4em;
   }
   .dropdown-content a {
@@ -191,14 +186,20 @@ body {
     width: 6.3em;
     top: 7.9em;
     display: block;
-    max-height: 5.5em;
+    max-height: 6.75em;
+    z-index: -1;
   }
   .dropdown:hover .dropbtn, .dropdown:active .dropbtn {
     background-color: pink;
     box-shadow: 0 0 0.5em 0.1em pink;
     font-size: 102%;
     border-style: outset;
+    z-index: 1;
   }
+
+#booksTab:link, booksTab:hover {
+    margin-top: 1.5em;
+}
 
   nav a:link, nav a:visited{
     float: left;
@@ -219,6 +220,11 @@ body {
     font-size: 102%;
     border-style: outset;
   }
+
+.leftPosters {
+  margin: 0;
+  padding: 50px 0;
+}
 
   .mainintrobg {
     background: midnightblue url('../images/bgs/gif/018.GIF');
@@ -297,7 +303,7 @@ body {
     transform: translateY(0.01em);
 }
   .leftcolumn {
-    margin: 4em 0 4em 5em;
+    margin: 4em 0 4em 4em;
     height: 100vh;
     display: flex;
     flex-direction: column;
