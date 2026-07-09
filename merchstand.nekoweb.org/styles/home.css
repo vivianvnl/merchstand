@@ -95,7 +95,8 @@ body {
   .threeColumns {
     border-radius: 22px;
     display: grid;
-    grid-template-columns: 14% 65% 20%;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 2em 1em;
   }
 
   .navall {
@@ -226,12 +227,29 @@ body {
   padding: 50px 0;
 }
 
+ .leftcolumn {
+    margin: 4em 0 0 3.25em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+  .middlecolumn {
+    padding: 0 1em;
+    color: powderblue;
+    font-size: 1.22em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
   .mainintrobg {
     background: midnightblue url('../images/bgs/gif/018.GIF');
     border: 0.25em ridge cadetblue;
     border-radius: 22px;
     padding: 1.25em;
-    margin: 0.25em 2em 1em 2em; 
+    margin: 0.25em 0 0.5em; 
     width: 80%;
     height: 6vh;
 }
@@ -272,52 +290,8 @@ body {
     cursor: default;
     scale: 108%;
     transform: translateX(0.1em) translateY(0.1em);
-  }
+  } 
 
-
-  .spotify {
-    margin: 1em;
-    width: 45%;
-    top: 115vh;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-  .spotifyintro {
-    color: powderblue;
-    font: 1em 'AnalogueOS', sans-serif;
-    font-style: italic;
-    text-align: center;
-    letter-spacing: 0.05em;
-    text-shadow: 0 0 3em black, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    z-index: 2;
-    top: -1.75vh;
-}
-  .spotifyintro:hover {
-    scale: 108%;
-    letter-spacing: 0.075em;
-    transform: translateY(0.01em);
-}
-  .leftcolumn {
-    margin: 4em 0 4em 4em;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-  .middlecolumn {
-    padding: 1em 1em 1em 1em;
-    margin: 0.5em;
-    color: powderblue;
-    font-size: 1.22em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   /* MINI TABS */
   aside {
     margin: 0.75em 0 2em -15em;
@@ -550,8 +524,36 @@ body {
     margin-top: 0.5em;
     margin-left: -0.5em;
 }
+
+  .spotify {
+    margin: 18em 0 0;
+    width: 130%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+  .spotifyintro {
+    color: powderblue;
+    font: 1em 'AnalogueOS', sans-serif;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 3em black, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 2;
+    top: -1.75vh;
+}
+  .spotifyintro:hover {
+    scale: 108%;
+    letter-spacing: 0.075em;
+    transform: translateY(0.01em);
+}
+
+
   .rightcolumn {
-    margin: 0 5em 1em 0;
     text-shadow: 0 0 3em #0000ff, 0 0 0.5em blue, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: center;
     display: flex;
@@ -575,8 +577,9 @@ body {
     background: midnightblue url('../images/bgs/gif/145.gif');
     border: 0.125em ridge rosybrown;
     border-radius: 1em;
-    height: calc(100%/4.25);
+    height: calc(100%/3);
     margin: 1.75em 0 1em;
+    width: 14em;
   }
   .subg {
     background: midnightblue;
@@ -607,13 +610,11 @@ body {
   }
   #suinfo {
     border: 0;
-    margin: 0;
+    margin: -1.5em 0 0;
     padding: 0;
     width: 12vw;
-    height: 23vh;
-    display: inline-block;
+    height: 30vh;
     position: relative;
-    transform: translateY(-1.75em);
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -622,10 +623,13 @@ body {
 }
 
   footer {
-    padding: 1.25em;
-    text-align: center;
-    padding-top: 35vh;
+    padding: 1.25em 0;
+    margin: 0;
+    align-items: center;
+    padding-top: 5vh;
     filter: drop-shadow(0 0 0.08em midnightblue);
+    display: flex;
+    flex-direction: column;
   }
 
 footer p {
