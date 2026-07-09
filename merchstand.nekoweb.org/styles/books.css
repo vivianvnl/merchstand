@@ -1,0 +1,104 @@
+* {
+    cursor: default;
+}
+
+body {
+    background: blue url('../images/books/booksBG.webp');
+    background-position: center;
+    background-size: 35%;
+    background-attachment: fixed;
+    
+    padding: 2.5em 0 20em 0;
+    height: calc(100vh*0.75);
+    margin: 0;
+}
+
+main {
+    margin: 0 auto;
+}
+
+h1 { 
+  font: 3.5em 'fake receipt', sans-serif;
+  text-shadow: 0 0 0.375em brown, 0 0 0.1em brown, -1px 0 brown, 0 1px brown, 1px 0 brown, 0 -1px brown;
+  color: white;
+  text-decoration: none;
+  border-radius: 15em;
+  margin: 0.6em 0 0 1.5em;
+  padding: 0 0.1em;
+  overflow: hidden;
+  width: 3.75em;
+  z-index: 2;
+}
+
+h1:hover {
+scale: 105%;
+}
+
+.backhome { 
+  font: 1em 'fake receipt', sans-serif;
+  text-shadow: 0 0 0.375em orange, 0 0 0.1em orange;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(255, 192, 203, 0.3);
+  border-radius: 15em;
+  box-shadow: 0 0 0.5em 0.1em rgba(255, 192, 203, 0.4);
+  overflow: hidden;
+  z-index: 3;
+}
+
+h2 {
+    transform: translateX(2em);
+    width: 9.25em;
+}
+
+h2:hover {
+scale: 105%;
+transform: translateX(2em);
+}
+
+.goodreadsApi {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 100px;
+    padding: 0 200px;
+    justify-items: center;
+} 
+
+.goodreadsApi h2, .goodreadsApi a {
+    font: 1.25em 'fake receipt', sans-serif;
+    text-shadow: 0 0 0.375em orange, 0 0 0.1em orange;
+    color: white;
+    text-decoration: none;
+}
+
+#faveReads h2 {
+    padding-left: 1em;
+    width: 25em;
+}
+
+#recentReads h2 {
+    padding-right: 5em;
+    width: 28em;
+}
+
+#faveReads {
+    grid-column: 1;
+}
+
+#recentReads {
+    grid-column: 2;
+}
+
+.gr_grid_container {
+    max-width: 550px;
+}
+
+.gr_grid_book_container {
+  /* customize book cover container div here */
+  float: left;
+  width: 100px;
+  height: 160px;
+  padding: 5px;
+  overflow: hidden;
+}
+
