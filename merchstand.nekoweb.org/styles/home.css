@@ -10,6 +10,11 @@ src: url(https://humantooth.neocities.org/fonts/Barecast-Regular.woff2) format('
 font-weight: normal;
 font-style: normal;
 } 
+
+* {
+  margin: 0;
+}
+
 /* style-my-tootltips plugin, tooltip stylng */
 #s-m-t-tooltip{
 	/* basic */
@@ -70,23 +75,31 @@ body {
     transform: translateY(0.03em);
 
   }
-  .mainpage {
+  main {
     background: midnightblue url('../images/bgs/webp/065C.webp/');
     background-size: 50%;
     border: 0.25em ridge blue;
     width: 75%;
-    height: 165vh;
     margin: 1em auto 2em;
     border-radius: 22px;
     animation: nauseate 40s infinite linear;
     animation-fill-mode: none;
+    display: flex;
+    flex-direction: column;
   }
 @keyframes nauseate {
   from {background-position: 0 432px}
   to {background-position: 570px -138px}
 }
+
+  .threeColumns {
+    border-radius: 22px;
+    display: grid;
+    grid-template-columns: 14% 65% 20%;
+  }
+
   .navall {
-    margin: 3em 0;
+    margin: 1em 0;
     padding: 0;
     position: relative;
     display: flex;
@@ -98,20 +111,14 @@ body {
     color: #ade0f5;
     font-style: italic;
     text-shadow: 0 0 3em black, 0 0 0.5em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    width: 90%;
-    position: absolute;
     z-index: 1;
-    transform: translateX(-0.4em) translateY(-0.86em);
 }
   .navtitle:hover {
     cursor: default;
     margin: 0;
     padding: 0;
     scale: 111%;
-    transform: translateX(-0.4em) translateY(-0.8em);
+    /*transform: translateX(-0.4em) translateY(-0.8em);*/
   }
   nav {
     background: steelblue url('../images/bgs/gif/blueflower.gif/');
@@ -125,9 +132,16 @@ body {
     text-align: left;
     height: 9.6em;
     overflow: hidden;
+    margin: 0;
+    margin: -0.75em;
   }
+
+  nav:hover {
+    height: 12em;
+  }
+
   #port {
-    letter-spacing: -0.1em;
+    letter-spacing: -0.09em;
   }
   .dropdown {
     float: left;
@@ -158,8 +172,7 @@ body {
     position: absolute;
     font-size: 100%;
     z-index: 1;
-    transform: translateX(-0.1em) translateY(1.6em);
-    margin: 0.15em 0;
+    margin: 2.9em -0.1em;
     padding: 0.1em 0 0.4em;
   }
   .dropdown-content a {
@@ -186,6 +199,7 @@ body {
     font-size: 102%;
     border-style: outset;
   }
+
   nav a:link, nav a:visited{
     float: left;
     background-color: skyblue;
@@ -604,14 +618,15 @@ body {
   footer {
     padding: 1.25em;
     text-align: center;
-    transform: translateY(32vh);
+    padding-top: 35vh;
     filter: drop-shadow(0 0 0.08em midnightblue);
   }
 
-  .row {
-    margin: auto;
-    border-radius: 22px;
-    display: grid;
-    grid-template-columns: 15% 65% 20%;
-  }
-  
+footer p {
+  font: 15px 'AnalogueOS', sans-serif;
+  letter-spacing: 3%;
+  font-style: italic;
+  text-align: center;
+  color: aquamarine;
+  text-shadow: 0 0 3em #0000ff, 0 0 0.5em blue, -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
