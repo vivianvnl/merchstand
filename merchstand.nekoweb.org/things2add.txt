@@ -14,3 +14,6 @@ record shelf: alabama shakes, interpol
 search
 
 change favicons of likes and ab and index pages
+
+add figure skating pg to likes
+11ty for blog
