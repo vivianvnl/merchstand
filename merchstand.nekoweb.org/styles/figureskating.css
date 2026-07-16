@@ -1,0 +1,10 @@
+body {
+    background: blue url('../images/figureskating/bg.jpg');
+    background-size: 100%;
+    background-position-y: -200px;
+    background-position-x: center;
+    margin: 0;
+    padding: 0;
+    overflow-y: visible;
+    cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat163.cur), default !important;
+}
