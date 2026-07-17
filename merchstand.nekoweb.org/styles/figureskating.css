@@ -1,10 +1,133 @@
+@font-face {                  
+font-family: 'AnalogueOS';
+src: url(https://humantooth.neocities.org/fonts/AnalogueOS-Regular.woff) format('woff');
+font-weight: normal;
+font-style: normal;
+} 
+@font-face {                  
+font-family: 'Barecast';
+src: url(https://humantooth.neocities.org/fonts/Barecast-Regular.woff2) format('woff2');
+font-weight: normal;
+font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* style-my-tootltips plugin, tooltip stylng */
+#s-m-t-tooltip{
+	/* basic */
+	max-width:200px;
+	z-index:10;
+	margin:40px 5px 32px 22px;
+	/* style and design */
+	padding:8px;
+	background:#0000ff; /* fallback if rgba not supported */
+	background: rgba(0, 0, 255, 0.85);
+    border-style: ridge;
+    border-color: black violet violet black;
+	border-width:  0.1em 0.125em 0.125em 0.1em;
+    -moz-border-radius:0.25em;
+	-webkit-border-radius:0.25em;
+	border-radius:0.25em;
+	-moz-box-shadow:0.1em 0.1em 0.3em black;
+	-webkit-box-shadow:0.1em 0.1em 0.3em black;
+	box-shadow: 0.1em 0.1em 0.3em black;
+	/* font */
+    font: 0.85em 'Barecast', sans-serif;
+    text-shadow: 0 0 0.3em black, -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	line-height:16px;
+	color:skyblue;
+}
+
 body {
-    background: blue url('../images/figureskating/bg.jpg');
+    background: blue url('../images/figureskating/bg.webp');
     background-size: 100%;
     background-position-y: -200px;
     background-position-x: center;
-    margin: 0;
+    margin: 2em 0;
     padding: 0;
     overflow-y: visible;
     cursor: url(https://cur.cursors-4u.net/nature/nat-2/nat163.cur), default !important;
+}
+
+.backhome { 
+  font: 0.75em 'fake receipt', sans-serif;
+  text-shadow: 0 0 0.15em violet, 0 0 0.1em violet;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(238, 130, 238, 0.4);
+  border-radius: 15em;
+  box-shadow: 0 0 1em 0.1em rgba(238, 130, 238, 0.65);
+  margin-left: 2em;
+  overflow: hidden;
+  z-index: 3;
+}
+
+header {
+    display: flex;
+    margin: 1.5vh 0 0 4vh;
+    height: 250px;
+    gap: 18vw;
+}
+
+h1 { 
+  font: 4em 'fake receipt', sans-serif;
+  text-shadow: 0 0 0.375em #3f078c, 0 0 0.1em violet, -1px 0 violet, 0 1px violet, 1px 0 violet, 0 -1px violet;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+  width: 9.5em;
+  height: 1.25em;
+  z-index: 2;
+}
+
+h1:hover, h2:hover {
+scale: 105%;
+}
+
+h1:hover {
+    transform: translateY(0.05em) translateX(0.25em);
+}
+
+h2:hover {
+    transform: translateX(1.35em);
+}
+
+.skaterImgs {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    margin-top: -10vh;
+    padding-left: 100px;
+}
+
+.img:hover {
+  scale: 105%;
+}
+
+#skatesImg {
+    scale: 150%;
+    transform: translateX(10vw);
+}
+
+#skatesImg:hover {
+    scale: 155%;
+}
+
+#emImg {
+    scale: 200%;
+}
+
+#emImg:hover {
+  scale: 205%;
+}
+
+#emsmImg {
+    scale: 85%;
+}
+
+#emsmImg:hover {
+  scale: 90%;
 }
