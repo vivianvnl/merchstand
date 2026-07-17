@@ -15,5 +15,8 @@ search
 
 change favicons of likes and ab and index pages
 
-add figure skating pg to likes
+add hyperlinks to the outfit/my fave performances for each image on figure skating
+	add the French ice dance pair
+	add the Canadian ice dance pair
+	yuzuru
 11ty for blog
